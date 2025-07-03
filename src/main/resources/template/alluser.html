@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dhruvisha Vara</title>
+<style type="text/css">
+body {
+	background: #156c5b;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	font-weight: 700;
+}
+
+.contain {
+	text-align: center;
+	background: #fff5ec;
+	width: 950px;
+	padding-bottom: 30px;
+	border-radius: 30px;
+	color: #156c5b;
+}
+
+.btn {
+	background: #156c5b;
+	color: #fff5ec;
+	padding: 5px 15px;
+	border: 2px solid #156c5b;
+}
+
+.input {
+	background: #156c5b;
+	color: #fff5ec;
+	border: 2px solid #156c5b;
+}
+</style>
+</head>
+<body>
+
+	<div class="contain">
+		<h1>All User List</h1>
+		<table border="1" align="center" cellpadding="8" cellspacing="0">
+				<tr>
+					<th>User ID</th>
+					<th>email</th>
+					<th>name</th>
+					<th>Create At</th>
+				</tr>
+				<tr th:each="sms : ${alluser}">
+					<td th:text="${sms.id}"></td>
+					<td th:text="${sms.name}"></td>
+					<td th:text="${sms.email}"></td>
+					<td th:text="${sms.createAt}"></td>
+				</tr>
+			</table>
+			<br /> <br />
+			
+			<h1>All Send Messages</h1>
+			<table border="1" align="center" cellpadding="8" cellspacing="0">
+				<tr>
+					<th>ID</th>
+					<th>Recipient</th>
+					<th>Message</th>
+					<th>Sent At</th>
+					<th> user id </th>
+					<th> user name </th>
+					<th> user email </th>
+				</tr>
+				<tr th:each="sms : ${allmessages}">
+					<td th:text="${sms.id}"></td>
+					<td th:text="${sms.recipient}"></td>
+					<td th:text="${sms.message}"></td>
+					<td th:text="${sms.sentAt}"></td>
+					<td th:text="${sms.user.id}"></td>
+					<td th:text="${sms.user.name}"></td>
+					<td th:text="${sms.user.email}"></td>
+					
+					
+				</tr>
+			</table>
+			<br /> <br />
+			<br/><br/>
+
+		<form th:action="@{/goback}" method="post">
+			<button type="submit" class="btn">Go Back</button>
+		</form>
+	</div>
+</body>
+</html>

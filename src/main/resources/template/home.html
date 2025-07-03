@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dhruvisha Vara</title>
+<style type="text/css">
+body {
+	background: #156c5b;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	font-weight: 700;
+}
+
+.contain {
+	text-align: center;
+	background: #fff5ec;
+	width: 550px;
+	padding-bottom: 30px;
+	border-radius: 30px;
+	color: #156c5b;
+}
+
+.btn {
+	background: #156c5b;
+	color: #fff5ec;
+	padding: 5px 15px;
+	border: 2px solid #156c5b;
+}
+
+.input {
+	background: #156c5b;
+	color: #fff5ec;
+	border: 2px solid #156c5b;
+}
+</style>
+</head>
+<body>
+	<div class="contain">
+		<h1>Twilio Messages</h1>
+		<div th:if="${success}">
+			<p style="color: green;" th:text="${success}"></p>
+		</div>
+		<div th:if="${error}">
+			<p style="color: red;" th:text="${error}"></p>
+		</div>
+		<form th:action="@{/send}" method="post">
+			<h3>Sms Twilio</h3>
+			Recipient: <input type="text" name="recipient" class="input" required />
+			<br /><br />
+			Message: <input type="text" name="message" class="input" required />
+			<br /><br />
+			<button type="submit" class="btn">Send</button>
+<!-- 			<button type="reset" class="btn">Clear</button> -->
+			<br /><br /><br /><br />
+		</form>
+		<a th:href="@{/lst}">Message List</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<a th:href="@{/thisuser}">User Details</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<a th:href="@{/alluser}">All Users & Messages Details</a>
+		
+		
+		<br /><br /><br /><br />
+		<a th:href="@{/logout}"><button type="button" class="btn">Logout</button></a>
+	</div>
+</body>
+</html>
