@@ -1,0 +1,68 @@
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+♥ Google OAuth2 Steps
+
+♥ https://console.cloud.google.com/
+
+• Select project for new
+• Project name: YOUR_NAME
+• Location (optional)
+• Click **Create** button
+
+♥ API & Services:
+• Go to **OAuth consent screen**
+• Click **Get Started**
+  • App Information → App name, Email → Click **Next**
+  • Audience → Choose **External** → Click **Next**
+  • Contact Information → Email → Click **Next**
+  • Final step → Review → Check ✅ → Click **Finish**
+
+♥ Credentials:
+• Click **Create Credentials**
+• Choose **OAuth client ID**
+  • Application type: **Web application**
+  • Name: YOUR_APP_NAME
+  • Authorized redirect URIs:
+    http://localhost:8080/login/oauth2/code/google
+  • Click **Create**
+
+♥ A dialog will appear showing your **Client ID** and **Client Secret**  
+→ These will later be added into application.yml
+
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+♥ Twilio Setup Steps
+
+♥ https://www.twilio.com/console
+
+♥ Buy a Twilio Phone Number:
+• Navigate to: **Phone Numbers → Buy a Number**
+• Select:
+  • Country: United States (+1)
+  • Capabilities: ✅ Voice and ✅ SMS
+• Click **Search** and **Buy** one available number
+
+♥ Verify Recipient Numbers (Required for Trial Accounts):
+• Go to: **Phone Numbers → Verified Caller IDs**
+• Click **Add a New Caller ID**
+• Enter your personal mobile number
+• Twilio will send a verification code via SMS or call
+• Enter the code to complete verification
+
+→ Note:
+• Twilio trial accounts **can only send SMS to verified numbers**
+• Message content is limited and always starts with:
+
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+♥ Remove your third party in Google
+
+♥ https://myaccount.google.com/permissions
+
+• Third-party apps & services
+• search by YourName → click or delete
+
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+
